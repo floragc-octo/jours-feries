@@ -1,0 +1,54 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background: #0d1117;
+    color: #c9d1d9;
+}
+
+.parent {
+    display: grid;
+    height: 98vh;
+    grid-template-rows: 1fr auto;
+    row-gap: 8px;
+}
+
+.parent main {
+    margin: auto;
+}
+
+.parent>* {
+    padding: 16px;
+    margin: 0 32px;
+}
+
+main p {
+    font-size: 4.5em;
+    font-weight: 700;
+}
+
+main span {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+#fetch-jour {
+    font-size: 6.5em;
+    font-weight: 700;
+}
+
+.delai {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+#compute-delai,
+#compute-detail {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+footer {
+    padding-top: 8px;
+    border-top: 1px solid #c9d1d945;
+    font-size: 0.8em;
+}

@@ -1,0 +1,18 @@
+{
+    "name": "jours-feries",
+    "version": "1.0.0",
+    "repository": "git@github.com:floragc-octo/jours-feries.git",
+    "author": "FloraGC",
+    "license": "MIT",
+    "dependencies": {
+        "dayjs": "^1.10.7"
+    },
+    "type": "module",
+    "scripts": {
+        "clean": "rm -rf ./dist ./.parcel-cache",
+        "build": "yarn clean && yarn parcel build ./index.html --no-source-maps"
+    },
+    "devDependencies": {
+        "parcel": "^2.0.0"
+    }
+}
