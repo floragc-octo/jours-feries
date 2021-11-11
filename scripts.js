@@ -22,6 +22,7 @@ const getJoursFeriesEnFrance = async() => {
 
 const afficheAujourdhui = (description) => {
     const descriptionJour = document.createElement('p');
+    descriptionJour.id = 'aujourdhui';
     descriptionJour.innerHTML = "Aujourd'hui est un jour férié en France 🥳"
     const intituleJour = document.createElement('span');
     intituleJour.innerHTML = description
@@ -36,7 +37,7 @@ const afficheProchainJourFerie = (description) => {
 
 const getDelai = (jourAComparer) => dayjs(jourAComparer).diff(getAujourdhui(), 'day')
 const afficheDelai = (date) => {
-    document.getElementById('compute-delai').innerHTML = getDelai(date)
+    document.getElementById('compute-delai').innerHTML = `${getDelai(date)}&nbsp;jours`
 }
 
 const descriptionDesJours = {

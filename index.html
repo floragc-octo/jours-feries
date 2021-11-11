@@ -12,25 +12,23 @@
     <meta property="og:url" content="">
     <meta property="og:description" content="Ce site affiche le prochain férié selon la liste fournie par l'api Jours fériés en France https://calendrier.api.gouv.fr/jours-feries">
     <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./scripts.js"> </script>
 </head>
 
 <body>
-    <div class="parent">
-        <main>
-            <div class="delai">En France, le prochain jour férié est dans <span id="compute-delai"></span> jours</div>
-            <div class="jour">C'est le <span id="fetch-jour"></span></div>
-            <div class="detail">Et ce sera un <span id="compute-detail"></span></div>
-        </main>
-        <footer>
-            <div>Ce site utilise l 'API mise à disposition sur le site
-                <a href="https://api.gouv.fr/documentation/jours-feries">https://api.gouv.fr/documentation/jours-feries</a>
-            </div>
-            <div>
-                Le code source peut être trouvé sur Github, <a href="https://github.com/floragc-octo/jours-feries">ici</a>
-            </div>
-        </footer>
-    </div>
-    <script type="module" src="./scripts.js"> </script>
+    <main>
+        <div class="delai">En France, le prochain jour férié est dans <span id="compute-delai"></span></div>
+        <div class="jour">C'est le <span id="fetch-jour"></span></div>
+        <div class="detail">Et ce sera un <span id="compute-detail"></span></div>
+    </main>
+    <footer>
+        <div>Ce site utilise l 'API mise à disposition sur le site
+            <a href="https://api.gouv.fr/documentation/jours-feries">api.gouv.fr/documentation/jours-feries</a>
+        </div>
+        <div>
+            Le code source peut être trouvé sur Github, <a href="https://github.com/floragc-octo/jours-feries">ici</a>
+        </div>
+    </footer>
 </body>
 
 </html>
