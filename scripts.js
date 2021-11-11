@@ -1,5 +1,40 @@
 import dayjs from 'dayjs'
 
+// ------------
+// THEMING
+// ------------
+
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)")
+const themeSwitcher = document.querySelector("#theme-switch")
+const currentTheme = localStorage.getItem("theme")
+
+if (currentTheme == "dark") {
+    themeSwitcher.innerHTML = "🌝"
+    document.body.classList.toggle("dark-mode")
+} else if (currentTheme == "light") {
+    themeSwitcher.innerHTML = "🌚"
+    document.body.classList.toggle("light-mode")
+}
+
+themeSwitcher.addEventListener("click", function() {
+    if (prefersDarkScheme.matches) {
+        document.body.classList.toggle("light-mode")
+        const containsLightMode = document.body.classList.contains("light-mode")
+        var theme = containsLightMode ? "light" : "dark"
+        themeSwitcher.innerHTML = containsLightMode ? "🌚" : "🌝"
+    } else {
+        document.body.classList.toggle("dark-mode")
+        const containsLightMode = document.body.classList.contains("dark-mode")
+        var theme = containsLightMode ? "dark" : "light"
+        themeSwitcher.innerHTML = containsLightMode ? "🌝" : "🌚"
+    }
+    localStorage.setItem("theme", theme)
+})
+
+// ------------
+// DATAS
+// ------------
+
 const DATE_FORMAT = 'YYYY-MM-DD'
 
 const getAnneeCourante = () => dayjs().year()

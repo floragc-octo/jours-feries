@@ -1,20 +1,56 @@
+body {
+    --text-color: #1A202C;
+    --background-color: #CAD4DF;
+    --background-content-color: #E2E8F0;
+    --separator-color: #E2E8F0;
+}
+
+body.dark-mode {
+    --text-color: #F7FAFB;
+    --background-color: #191F2A;
+    --background-content-color: #2D3848;
+    --separator-color: #2D3848;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --text-color: #F7FAFB;
+        --background-color: #191F2A;
+        --background-content-color: #2D3848;
+        --separator-color: #2D3848;
+    }
+    body.light-mode {
+        --text-color: #1A202C;
+        --background-color: #CAD4DF;
+        --background-content-color: #E2E8F0;
+        --separator-color: #E2E8F0;
+    }
+}
+
 html {
     font-size: 100%;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #c9d1d9;
+    color: var(--text-color);
     text-align: center;
-    background: #0d1117;
+    background: var(--background-color);
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
     row-gap: 0.5rem;
     height: 98vh;
 }
 
 body main {
     margin: auto;
+    padding: 3rem 1rem;
+    background-color: var(--background-content-color);
+    border-radius: 1rem;
+}
+
+body main>*:not(:last-child) {
+    margin-bottom: 1rem;
 }
 
 body>* {
@@ -45,8 +81,13 @@ body main span {
 
 footer {
     padding-top: 0.5rem;
-    border-top: 0.1rem solid #c9d1d945;
+    border-top: 0.1rem solid var(--separator-color);
     font-size: 0.8rem;
+}
+
+#theme-switch {
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 @media (max-width: 480px) {
@@ -55,7 +96,7 @@ footer {
     }
     body>* {
         padding: 1rem;
-        margin: 0 1rem;
+        margin: 0;
     }
     #fetch-jour,
     #compute-delai,
@@ -64,7 +105,7 @@ footer {
         font-size: 1.5rem;
         font-weight: 700;
     }
-    body main>* {
+    body main>*:not(:last-child) {
         margin-bottom: 2rem;
     }
     footer {
