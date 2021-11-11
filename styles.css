@@ -1,54 +1,73 @@
+html {
+    font-size: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #c9d1d9;
     text-align: center;
     background: #0d1117;
-    color: #c9d1d9;
-}
-
-.parent {
     display: grid;
-    height: 98vh;
     grid-template-rows: 1fr auto;
-    row-gap: 8px;
+    row-gap: 0.5rem;
+    height: 98vh;
 }
 
-.parent main {
+body main {
     margin: auto;
 }
 
-.parent>* {
-    padding: 16px;
-    margin: 0 32px;
+body>* {
+    padding: 1rem;
+    margin: 0 2rem;
 }
 
-main p {
-    font-size: 4.5em;
-    font-weight: 700;
-}
-
-main span {
+body main span {
     font-size: 3em;
     font-weight: 500;
 }
 
-#fetch-jour {
-    font-size: 6.5em;
+#aujourdhui {
+    font-size: 2rem;
     font-weight: 700;
 }
 
-.delai {
-    font-size: 2em;
+#fetch-jour {
+    font-size: 4.5em;
     font-weight: 700;
 }
 
 #compute-delai,
 #compute-detail {
-    font-size: 2.5em;
+    font-size: 3rem;
     font-weight: 700;
 }
 
 footer {
-    padding-top: 8px;
-    border-top: 1px solid #c9d1d945;
-    font-size: 0.8em;
+    padding-top: 0.5rem;
+    border-top: 0.1rem solid #c9d1d945;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 150%;
+    }
+    body>* {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+    #fetch-jour,
+    #compute-delai,
+    #compute-detail,
+    #aujourdhui {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    body main>* {
+        margin-bottom: 2rem;
+    }
+    footer {
+        font-size: 0.5rem;
+    }
 }
