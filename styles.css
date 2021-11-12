@@ -42,6 +42,11 @@ body {
     height: 98vh;
 }
 
+a,
+a:visited {
+    color: var(--text-color);
+}
+
 body main {
     margin: auto;
     padding: 3rem 1rem;
