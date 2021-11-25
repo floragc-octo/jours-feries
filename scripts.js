@@ -72,17 +72,17 @@ const afficheProchainJourFerie = (description) => {
 
 const getDelai = (jourAComparer) => dayjs(jourAComparer).diff(getAujourdhui(), 'day')
 const afficheDelai = (date) => {
-    document.getElementById('compute-delai').innerHTML = `${getDelai(date)}&nbsp;jours`
+    document.getElementById('compute-delai').innerHTML = getDelai(date)
 }
 
 const descriptionDesJours = {
-    0: "dimanche 😭",
-    1: "lundi 😎",
-    2: "mardi 😁",
-    3: "mercredi 😄",
-    4: "jeudi 😁",
-    5: "vendredi 😎",
-    6: "samedi 😭",
+    0: "dimanche",
+    1: "lundi",
+    2: "mardi",
+    3: "mercredi",
+    4: "jeudi",
+    5: "vendredi",
+    6: "samedi",
 }
 const afficheJourDeLaSemaine = (jourFerie) => {
     document.getElementById('compute-detail').innerHTML = descriptionDesJours[dayjs(jourFerie).day()]

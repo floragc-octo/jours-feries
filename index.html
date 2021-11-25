@@ -11,6 +11,9 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:description" content="Ce site affiche le prochain férié selon la liste fournie par l'api Jours fériés en France https://calendrier.api.gouv.fr/jours-feries">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <script type="module" src="./scripts.js"> </script>
 </head>
@@ -18,9 +21,8 @@
 <body>
     <header><button id="theme-switch">🌝</button></header>
     <main>
-        <div class="delai">En France, le prochain jour férié est dans <span id="compute-delai"></span></div>
-        <div class="jour">C'est le <span id="fetch-jour"></span></div>
-        <div class="detail">Et ce sera un <span id="compute-detail"></span></div>
+        <span class="delai">En France, le prochain jour férié est dans <span id="compute-delai"></span>&nbsp;jours!</span>
+        <span class="jour">Ce sera le </span><span id="fetch-jour"></span> (un <span id="compute-detail"></span>)</span>
     </main>
     <footer>
         <div>Ce site utilise les données de
