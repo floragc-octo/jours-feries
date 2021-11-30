@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/42e1c85d-d9b8-4c85-9797-a6a21a004d02/deploy-status)](https://app.netlify.com/sites/kind-franklin-4822fa/deploys)
+
 # Jours fériés en France
 
 Ce projet récupère la liste des jours fériés de l'année en cours et indique le nombre de jours restants avant le prochain :) 
