@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Prochain jour férié en France </title>
+    <title>Prochain jour férié en France</title>
     <meta name="description" content="Ce site affiche le prochain férié selon la liste fournie par l'api Jours fériés en France https://calendrier.api.gouv.fr/jours-feries">
     <meta name="author" content="Flora GC">
     <meta property="og:title" content="Quel est le prochain jour férié">
@@ -20,9 +20,9 @@
 
 <body>
     <header><button id="theme-switch">🌝</button></header>
-    <main>
-        <span class="delai">En France, le prochain jour férié est dans <span id="compute-delai"></span>&nbsp;jours!</span>
-        <span class="jour">Ce sera le </span><span id="fetch-jour"></span> (un <span id="compute-detail"></span>)</span>
+    <main id="content">
+        <h1 class="delai">Le prochain jour férié est dans <span id="compute-delai">89</span>&nbsp;jours!</h1>
+        <h2 class="jour">Ce sera le <span id="fetch-jour">Lundi de Pâques</span> (un&nbsp;<span id="compute-detail">lundi</span>)</h2>
     </main>
     <footer>
         <div>Ce site utilise les données de

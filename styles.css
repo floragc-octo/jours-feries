@@ -1,9 +1,28 @@
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+:root {
+    --font-size: 4rem;
+    --big-font-size: 5rem;
+    --medium-font-size: 2rem;
+    --small-font-size: .8rem;
+    --text-font-weight: 700;
+    --big-font-weight: 800;
+    --medium-font-weight: 600;
+    --small-font-weight: 400;
+}
+
 body {
     --text-color: #1a202c;
-    --background-color: #cad4df;
+    --background-color: #FFF;
     --background-content-color: #e2e8f0;
     --separator-color: #e2e8f0;
-    --highlight-color: #0389DA;
+    --highlight-color: #B721FF;
+    --highlight-gradient-bg-color: background-color: #21D4FD;
+    --highlight-gradient-bg-img: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 }
 
 body.dark-mode {
@@ -11,7 +30,10 @@ body.dark-mode {
     --background-color: #191f2a;
     --background-content-color: #2d3848;
     --separator-color: #2d3848;
-    --highlight-color: #f13c73;
+    --highlight-color: #c1449b;
+    --highlight-gradient-bg-color: #FBDA61;
+    --highlight-gradient-bg-img: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,31 +42,29 @@ body.dark-mode {
         --background-color: #191f2a;
         --background-content-color: #2d3848;
         --separator-color: #2d3848;
-        --highlight-color: #f13c73;
+        --highlight-color: #c1449b;
+        --highlight-gradient-bg-color: #FBDA61;
+        --highlight-gradient-bg-img: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
     }
     body.light-mode {
         --text-color: #1a202c;
-        --background-color: #cad4df;
+        --background-color: #FFF;
         --background-content-color: #e2e8f0;
         --separator-color: #e2e8f0;
-        --highlight-color: #0389DA;
+        --highlight-color: #B721FF;
+        --highlight-gradient-bg-color: background-color: #21D4FD;
+        --highlight-gradient-bg-img: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     }
 }
 
-html {
-    font-size: 100%;
-}
-
 body {
-    font-family: "Roboto", sans-serif;
     color: var(--text-color);
-    text-align: center;
     background: var(--background-color);
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 98vh;
-    font-size: 3em;
-    font-weight: 700;
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
 }
 
 a,
@@ -52,17 +72,15 @@ a:visited {
     color: var(--text-color);
 }
 
-body main {
-    margin: auto;
-    width: 40vw;
-    padding: 3rem;
-    background-color: var(--background-content-color);
-    border-radius: 1rem;
-    text-align: left;
+footer {
+    padding-top: 0.5rem;
+    border-top: 0.1rem solid var(--separator-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--small-font-weight);
 }
 
-body main > *:not(:last-child) {
-    margin-bottom: 1rem;
+header, footer {
+    text-align: center;
 }
 
 body > * {
@@ -70,8 +88,31 @@ body > * {
     margin: 0 2rem;
 }
 
-body main span {
-    line-height: 5rem;
+#content {
+    width: 60vw;
+    margin: auto;
+    text-align: left;
+}
+
+.delai {
+    font-size: var(--big-font-size);
+    font-weight: var(--big-font-weight);
+    letter-spacing: -.02em;
+    margin-block-start: 0.2em;
+}
+
+#compute-delai {
+    background-color: var(--highlight-gradient-bg-color);
+    background-image: var(--highlight-gradient-bg-img);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.jour {
+    font-size: var(--medium-font-size);
+    font-weight: var(--medium-font-weight);
+    letter-spacing: -.05em;
 }
 
 #fetch-jour,
@@ -80,17 +121,12 @@ body main span {
     color: var(--highlight-color);
 }
 
-footer {
-    padding-top: 0.5rem;
-    border-top: 0.1rem solid var(--separator-color);
-    font-size: 0.8rem;
-}
-
 #theme-switch {
     font-size: 2rem;
     cursor: pointer;
     border-radius: 50%;
-    border: transparent;
+    border: none;
+    background: none;
     padding: 0.15rem 0.5rem;
 }
 
@@ -102,15 +138,11 @@ footer {
         padding: 1rem;
         margin: 0;
     }
-    body > main {
+    #content {
         font-size: 0.8em;
         margin: auto;
         width: 90%;
         padding: 1rem;
-    }
-
-    body main > *:not(:last-child) {
-        margin-bottom: 2rem;
     }
     footer {
         font-size: 0.8rem;
