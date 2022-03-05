@@ -19,11 +19,11 @@ Les données vient des APIs du service public (fr)
 et plus précisement de https://api.gouv.fr/documentation/jours-feries
 
 ## Technos front
-* **`Javascript`**
-* **`HTML`**
-* **`CSS`**
+**`Javascript`** / **`HTML`** / **`CSS`**
 
 Une dépendance npm : 
-* **`dayjs`**
+
+**`dayjs`**
+
 ## Build
-* **`Parcel`**
+**`Parcel`**
