@@ -8,9 +8,9 @@ Le site est déployé sur **`Netlify`** via **Github** et disponible ici -> 🚀
 
 # Preview
 <p align="center">
-<img src="https://user-images.githubusercontent.com/48243955/143435449-c326f4f6-2973-48b8-b16d-c72d901f72e4.png" width="45%" />
+<img src="https://user-images.githubusercontent.com/48243955/156879040-72cee3ca-2abf-4a82-80c7-4640a61d708a.png" width="45%" />
   &nbsp; &nbsp; &nbsp; &nbsp;
-<img src="https://user-images.githubusercontent.com/48243955/143435547-36cbbde7-51eb-41cf-b7c6-15071e7dfaf8.png" width="45%" />
+<img src="https://user-images.githubusercontent.com/48243955/156879050-0bafdcee-1e04-4709-b19d-2baf52139ebd.png" width="45%" />
 </p>
 
 # D'où viennent les données ?
