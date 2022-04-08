@@ -16,44 +16,44 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 body {
-    --text-color: #1a202c;
-    --background-color: #FFF;
-    --background-content-color: #e2e8f0;
-    --separator-color: #e2e8f0;
-    --highlight-color: #B721FF;
-    --highlight-gradient-bg-color: background-color: #21D4FD;
-    --highlight-gradient-bg-img: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    --text-color: #37474F;
+    --background-color: #EEEEEE;
+    --background-content-color: #78909C;
+    --separator-color: #78909C;
+    --highlight-color: #6667f4;
+    --highlight-gradient-bg-color: #21d4fd;
+    --highlight-gradient-bg-img: linear-gradient(19deg,#21d4fd,#b721ff);
 }
 
 body.dark-mode {
-    --text-color: #f7fafb;
-    --background-color: #191f2a;
-    --background-content-color: #2d3848;
+    --text-color: #FFFFFF;
+    --background-color: #37474F;
+    --background-content-color: #C5D3DA;
     --separator-color: #2d3848;
-    --highlight-color: #c1449b;
-    --highlight-gradient-bg-color: #FBDA61;
-    --highlight-gradient-bg-img: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+    --highlight-color: #db6da6;
+    --highlight-gradient-bg-color: #fbda61;
+    --highlight-gradient-bg-img: linear-gradient(19deg,#fbda61,#ff5acd);
 
 }
 
 @media (prefers-color-scheme: dark) {
     body {
-        --text-color: #f7fafb;
+        --text-color: #FFFFFF;
         --background-color: #191f2a;
-        --background-content-color: #2d3848;
+        --background-content-color: #C5D3DA;
         --separator-color: #2d3848;
-        --highlight-color: #c1449b;
-        --highlight-gradient-bg-color: #FBDA61;
-        --highlight-gradient-bg-img: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+        --highlight-color: #db6da6;
+        --highlight-gradient-bg-color: #fbda61;
+        --highlight-gradient-bg-img: linear-gradient(19deg,#fbda61,#ff5acd);
     }
     body.light-mode {
-        --text-color: #1a202c;
-        --background-color: #FFF;
-        --background-content-color: #e2e8f0;
-        --separator-color: #e2e8f0;
-        --highlight-color: #B721FF;
-        --highlight-gradient-bg-color: background-color: #21D4FD;
-        --highlight-gradient-bg-img: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+        --text-color: #37474F;
+        --background-color: #EEEEEE;
+        --background-content-color: #78909C;
+        --separator-color: #78909C;
+        --highlight-color: #6667f4;
+        --highlight-gradient-bg-color: #21d4fd;
+        --highlight-gradient-bg-img: linear-gradient(19deg,#21d4fd,#b721ff);
     }
 }
 
@@ -65,6 +65,7 @@ body {
     height: 98vh;
     font-size: var(--font-size);
     font-weight: var(--font-weight);
+    overflow-x: hidden;
 }
 
 a,
@@ -83,42 +84,69 @@ header, footer {
     text-align: center;
 }
 
-body > * {
-    padding: 1rem;
-    margin: 0 2rem;
-}
-
 #content {
-    width: 60vw;
+    width: 100%;
+    max-width: 80vw;
     margin: auto;
-    text-align: left;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 6rem auto;
+    margin-left: 35vw;
+    grid-auto-flow: row;
+    box-sizing: border-box;
+    gap: 1rem;
+    grid-template-areas:
+        "jour date-complete"
+        "jour jour-ferie"
+        "description .";
 }
+    .jour { 
+        grid-area: jour; 
+        /*color: var(--text-color);*/
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20rem;
+        text-align: right;
+        line-height: 18rem;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-color: var(--highlight-gradient-bg-color);
+        background-image: var(--highlight-gradient-bg-img);
+    }
+    
+    .date-complete { grid-area: date-complete; }
+    
+    .jour-ferie { 
+        grid-area: jour-ferie;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 67px;
+        background-color: #FFF;
+        color: var(--highlight-color);
+        line-height: 6rem;
+        padding-left: 2rem;
+    }
+    
+    .description { 
+        grid-area: description; 
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        color: var(--background-content-color);
+    }
+      
 
 .delai {
     font-size: var(--big-font-size);
     font-weight: var(--big-font-weight);
     letter-spacing: -.02em;
     margin-block-start: 0.2em;
-}
-
-#compute-delai {
-    background-color: var(--highlight-gradient-bg-color);
-    background-image: var(--highlight-gradient-bg-img);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.jour {
-    font-size: var(--medium-font-size);
-    font-weight: var(--medium-font-weight);
-    letter-spacing: -.05em;
-}
-
-#fetch-jour,
-#compute-delai,
-#compute-detail {
-    color: var(--highlight-color);
 }
 
 #theme-switch {
